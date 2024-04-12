@@ -1,0 +1,82 @@
+/* estilos.css */
+
+/* ESTILOS CABECERA */
+.header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #2b2929;
+    padding: 20px 10px;
+}
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 45%;
+}
+
+.header a.active {
+    background-color: rgb(196, 112, 9);
+    color: white;
+}
+
+.header a:hover {
+    background-color: darkgrey;
+}
+
+.header a.logo:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.header-right {
+    float: right;
+}
+
+/* ADAPTACION DE LA CABECERA CUANDO SE REDUCE EL TAMAÑO */
+@media screen and (max-width: 500px) {
+    .header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .header-right {
+        float: none;
+    }
+}
+
+/*  ESTILO PARRAFOS Y CONTENIDO PRINCIPAL   */
+p {
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+}
+
+.content {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+/*  ESTILO PIE DE PAGINA  */
+.footer {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2b292900; /* De momento transparente */
+    padding: 20px 10px;
+}
