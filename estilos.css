@@ -1,5 +1,9 @@
 /* estilos.css */
 
+html {
+    font-family: 'Franklin Gothic Medium';
+}
+
 /* ESTILOS CABECERA */
 .header {
     overflow: hidden;
@@ -23,6 +27,7 @@
 }
 
 .header a.logo {
+    /*  LETRAS WISEWALLET CENTRO CABECERA    */
     font-size: 25px;
     font-weight: bold;
     margin-left: 45%;
@@ -77,6 +82,132 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #2b292900; /* De momento transparente */
+    background-color: #2b292900;
+    /* De momento transparente */
     padding: 20px 10px;
 }
+
+/*--------------------------------------------------------------------------------*/
+/*  PAGINA REGISTRARSE  */
+
+/*  CABECERA    */
+.header-register {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 10px;
+}
+
+.header-register a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header-register a.logo {
+    margin-left: 5%;
+    margin-top: 1%;
+    font-size: 25px;
+    font-weight: bold;
+    float: left;
+    color: white;
+}
+
+.header-register a.active {
+    background-color: rgb(196, 112, 9);
+    color: white;
+}
+
+.header-register a:hover {
+    background-color: darkgrey;
+}
+
+.header-register a.logo:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*  FIN CABECERA*/
+
+/*  MITAD IZQUIERDA */
+.mitad-izquierda {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 35%;
+    background-color: #990F4B;
+    height: 100%;
+}
+
+.TituloPagRegistro {
+    margin-top: 15%;
+    margin-left: 20%;
+    margin-right: 15%;
+    font-size: 90px;
+    text-align: left;
+    color: #c1d1f6;
+}
+
+.textopagregistro {
+    margin-left: 20%;
+    margin-right: 45%;
+    font-size: 25px;
+    text-align: left;
+    color: white;
+    font-style: oblique;
+}
+
+/*  FIN MITAD IZQUIERDA */
+
+/*  MITAD DERECHA   */
+.mitad-derecha {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 65%;
+    background-color: white;
+    height: 100%;
+}
+
+.registrate {
+    margin-top: 30%;
+    margin-left: 15%;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.textoinicia {
+    font-size: 20px;
+    margin-top: -3%;
+    margin-left: 15%;
+}
+
+.cuadrostexto input {
+    margin-left: 15%;
+    width: 70%;
+    height: 55px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.botonregistro {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 12px 28.6%;
+    margin-left: 15%;
+    height: 55px;
+    background-color: #004cff;
+}
+
+.cuadrotic{
+    margin-left: 15%;
+}
+/*  FIN MITAD DERECHA   */
