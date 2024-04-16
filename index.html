@@ -13,7 +13,22 @@
 
     <!--    CABECERA    -->
     <div class="header">
+
+        <div id="mysidenav" class="sidenav">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="container" onclick="myFunction(this), toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
         <a href="index.html" class="logo">WiseWallet</a>
+
         <div class="header-right">
             <a href="index.html">Sobre nosotros</a> <!-- A la pagina que esté activa le añado class = "active" -->
             <a href="#contact">Foro</a>
@@ -93,10 +108,29 @@
 
     <!--    PIE DE PAGINA    -->
     <div class="footer">
-        
+
     </div>
     <!--    FIN PIE DE PAGINA    -->
 
+    <script>
+    
+        function myFunction(x) {
+            x.classList.toggle("change");
+        }
+        
+        function toggleNav() {
+            const sidenav = document.getElementById("mysidenav");
+            const container = document.querySelector(".container");
+
+            if (sidenav.style.width === "200px") {
+                sidenav.style.width = "0";
+                container.classList.remove("change");
+            } else {
+                sidenav.style.width = "200px";
+                container.classList.add("change");
+            }
+        }
+    </script>
 </body>
 
 </html>

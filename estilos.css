@@ -94,6 +94,7 @@ p {
 .header-register {
     overflow: hidden;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     right: 0;
@@ -120,17 +121,8 @@ p {
     color: white;
 }
 
-.header-register a.active {
-    background-color: rgb(196, 112, 9);
-    color: white;
-}
-
-.header-register a:hover {
+.header-right a:hover {
     background-color: darkgrey;
-}
-
-.header-register a.logo:hover {
-    background-color: rgba(0, 0, 0, 0);
 }
 
 /*  FIN CABECERA*/
@@ -147,7 +139,7 @@ p {
 }
 
 .TituloPagRegistro {
-    margin-top: 15%;
+    margin-top: 12%;
     margin-left: 15%;
     margin-right: 10%;
     font-size: 90px;
@@ -183,10 +175,20 @@ p {
     margin-left: 15%;
 }
 
-.textoinicia {
+.mitad-derecha>h5 {
     font-size: 20px;
     margin-top: -3%;
     margin-left: 15%;
+    text-decoration:none;
+}
+
+.texto-inicia{
+    color: #004cff;
+    text-decoration:none;
+}
+
+.texto-inicia:hover{
+    color: #3874ff;
 }
 
 .cuadrostexto input {
@@ -200,6 +202,7 @@ p {
 
 .botonregistro {
     text-decoration: none;
+    font-size: 18px;
     color: white;
     padding: 12px;
     width: 70%;
@@ -212,6 +215,7 @@ p {
 
 .cuadrotic{
     margin-left: 15%;
+    margin-bottom: 20px;
 }
 /*  FIN MITAD DERECHA   */
 
@@ -229,3 +233,90 @@ p {
     margin-left: 15%;
     margin-bottom: 3%;
 }
+
+.login>h5 {
+    font-size: 20px;
+    margin-top: -2%;
+    margin-left: 15%;
+    text-decoration:none;
+}
+
+.texto-registra{
+    color: #004cff;
+    text-decoration:none;
+}
+
+.texto-registra:hover{
+    color: #3874ff;
+}
+/*  FIN PAGINA INICIAR SESION  */  
+/*--------------------------------------------------------------------------------*/
+/*  PAGINA INDEX  */
+
+/* The side navigation menu */
+
+.container {
+  margin-top:2px;
+  margin-left:-53%;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 5;
+}
+  
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+  
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+.change .bar3 {
+   transform: translate(0, -11px) rotate(45deg);
+}
+
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 0; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #2b2929; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 100px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+  background-color:rgba(255, 255, 255, 0);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top:25px;
+  left:125px;
+  right: 25px;
+  font-size: 50px;
+}
+
+/*  FIN PAGINA INDEX  */ 
