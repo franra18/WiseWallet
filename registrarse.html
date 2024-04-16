@@ -15,7 +15,7 @@
     <div class="mitad-izquierda">
         <p class="TituloPagRegistro">Pon tu energía creativa a trabajar con WiseWallet</p>
         <p class="textopagregistro">WiseWallet es un espacio de trabajo moderno diseñado
-            para aliviar el trabajo pesado, de modo que puedas hacer hincapié en lo que 
+            para aliviar el trabajo pesado, de modo que puedas hacer hincapié en lo que
             realmente importa.
         </p>
 
@@ -26,19 +26,20 @@
     <div class="mitad-derecha">
         <h1 class="registrate">Regístrate</h1>
         <h5 class="textoinicia">o <a href="iniciarsesion.html">inicia sesión en tu cuenta</a></h5>
-        <div class="cuadrostexto">
-            <input type="text" name="nombre" placeholder="  Nombre">
-            <input type="text" name="nombre" placeholder="  Apellidos">
-            <input type="text" name="nombre" placeholder="  Correo electrónico">
-            <input type="text" name="nombre" placeholder="  Contraseña">
-        </div>
-    
-        <input class="cuadrotic" type="checkbox" checked="checked" name="remember"> Recuérdame
-        <p></p>
-        <p></p> <!-- espacio vacio pq no me deja poner margen   -->
-        <p></p>
-        <a class="botonregistro" href="index.html">Registrarse</a>
+        <form>
+            <div class="cuadrostexto">
+                <input type="text" name="Nombre" placeholder="Nombre" required>
+                <input type="text" name="Apellidos" placeholder="Apellidos" required>
+                <input type="text" name="Correo" placeholder="Correo electrónico" required>
+                <input type="text" name="Contraseña" placeholder="Contraseña" required>
+            </div>
 
+            <input class="cuadrotic" type="checkbox" checked="checked" name="remember"> Recuérdame
+            <p></p>
+            <p></p> <!-- espacio vacio pq no me deja poner margen   -->
+            <p></p>
+            <input type="submit" value="Registrarse" class="botonregistro" href="index.html"></input>
+        </form>
     </div>
     <!--    FIN MITAD DERECHA   -->
 
