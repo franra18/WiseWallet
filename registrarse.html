@@ -32,8 +32,8 @@
     <!--    MITAD DERECHA   -->
     <div class="mitad-derecha">
         <h1 class="registrate">Regístrate</h1>
-        <h5>o <a href="iniciarsesion.html" class="texto-inicia">inicia sesión en tu cuenta</a></h5>
-        <form>
+        <h5 class="registrate">o <a href="iniciarsesion.html" class="texto-inicia">inicia sesión en tu cuenta</a></h5>
+        <form action = "index.html" method="post">
             <div class="cuadrostexto">
                 <input type="text" name="Nombre" placeholder="Nombre" required>
                 <input type="text" name="Apellidos" placeholder="Apellidos" required>
@@ -41,8 +41,11 @@
                 <input type="text" name="Contraseña" placeholder="Contraseña" required>
             </div>
 
-            <input class="cuadrotic" type="checkbox" checked="checked" name="remember">Recuérdame
-            <input type="submit" value="Registrarse" class="botonregistro" href="index.html"></input>
+            <div class="custom-checkbox">
+                <input type="checkbox" id="miCheckbox">
+                <label for="miCheckbox" class="Recuerdame">Recuérdame</label>                
+            </div>
+            <input type="submit" value="Registrarse" class="botonregistro"></input>
         </form>
     </div>
     <!--    FIN MITAD DERECHA   -->

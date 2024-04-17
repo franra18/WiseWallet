@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contenido de Checkbox</title>
+    <style>
+        /* Estilo de la casilla de verificación */
+        .custom-checkbox input[type="checkbox"] {
+            display: none; /* Oculta el input original */
+        }
+
+        /* Estilo de la casilla de verificación personalizada */
+        .custom-checkbox input[type="checkbox"] + label::before {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+            border: 2px solid #007bff; /* Color azul original */
+            border-radius: 4px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Estilo cuando la casilla de verificación está marcada */
+        .custom-checkbox input[type="checkbox"]:checked + label::before {
+            background-color: #007bff; /* Color azul original */
+            color: white;
+            content: "\2714"; /* Símbolo ✔ */
+        }
+
+        /* Estilo de la etiqueta asociada a la casilla de verificación */
+        .custom-checkbox label {
+            cursor: pointer;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<div class="custom-checkbox">
+    <input type="checkbox" id="miCheckbox" />
+    <label for="miCheckbox">Aceptar términos y condiciones</label>
+</div>
+
+</body>
+</html>
