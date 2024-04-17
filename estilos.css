@@ -1,10 +1,23 @@
 /* estilos.css */
 
 html {
-    font-family: 'Franklin Gothic Medium';
+    font-family: 'MiFuente';
 }
 
-/* ESTILOS CABECERA */
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'MiFuente';
+    src: url('Perfectly\ Vintages\ Font\ by\ Keithzo.otf') format('opentype');
+    /* puedes agregar más estilos de la fuente aquí, como font-weight y font-style */
+}
+
+/*--------------------------------------------------------------------------------*/
+/*  PAGINA INDEX  */
+
+/*  Cabecera    */
 .header {
     overflow: hidden;
     position: fixed;
@@ -26,11 +39,13 @@ html {
     border-radius: 4px;
 }
 
+
 .header a.logo {
-    /*  LETRAS WISEWALLET CENTRO CABECERA    */
+    /*  Letras WiseWallet centro cabecera    */
     font-size: 25px;
     font-weight: bold;
-    margin-left: 45%;
+    margin-left: 40%;
+    position: initial;
 }
 
 .header a.active {
@@ -50,7 +65,9 @@ html {
     float: right;
 }
 
-/* ADAPTACION DE LA CABECERA CUANDO SE REDUCE EL TAMAÑO */
+/*  Fin cabecera    */
+
+/*  Adaptación de la cabecera cuando se reduce el tamaño   */
 @media screen and (max-width: 500px) {
     .header a {
         float: none;
@@ -63,19 +80,20 @@ html {
     }
 }
 
-/*  ESTILO PARRAFOS Y CONTENIDO PRINCIPAL   */
-p {
+/*  Fin adaptación  */
+
+/*  Párrafos   */
+.content {
     margin-left: 20%;
     margin-right: 20%;
     text-align: justify;
-}
-
-.content {
     margin-top: 200px;
     margin-bottom: 200px;
 }
 
-/*  ESTILO PIE DE PAGINA  */
+/*  Fin párrafos*/
+
+/*  Pie de página  */
 .footer {
     overflow: hidden;
     position: fixed;
@@ -87,10 +105,90 @@ p {
     padding: 20px 10px;
 }
 
+/*  Fin pie de página*/
+
+/*  Menú desplegable    */
+.iconomenu {
+    margin-top: 2px;
+    float: left;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+    z-index: 5;
+}
+
+.change .bar1 {
+    transform: translate(0, 12px) rotate(-45deg);
+    margin-left: 300%;
+}
+
+.change .bar2 {
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.change .bar3 {
+    transform: translate(0, -12px) rotate(45deg);
+    margin-left: 300%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background-color: #2b2929;
+    overflow-x: hidden;
+    /* Deshabilita el scroll horizontal */
+    padding-top: 8%;
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+.sidenav a {
+    /* The navigation menu links */
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.sidenav .closebtn {
+    /* Position and style the close button (top right corner) */
+    position: absolute;
+    top: 25px;
+    left: 125px;
+    right: 25px;
+    font-size: 50px;
+}
+
+/*  Fin menú desplegable*/
+
+/*  FIN PAGINA INDEX    */
 /*--------------------------------------------------------------------------------*/
 /*  PAGINA REGISTRARSE  */
 
-/*  CABECERA    */
+/*  Cabecera registrarse    */
 .header-register {
     overflow: hidden;
     position: fixed;
@@ -125,9 +223,9 @@ p {
     background-color: rgba(41, 119, 46, 0.858);
 }
 
-/*  FIN CABECERA*/
+/*  Fin cabecera registrarse    */
 
-/*  MITAD IZQUIERDA */
+/*  Mitad izquierda  */
 .mitad-izquierda {
     overflow: hidden;
     position: fixed;
@@ -136,7 +234,6 @@ p {
     right: 35%;
     background-image: url('Fondo1.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
 }
@@ -160,9 +257,9 @@ p {
     font-style: oblique;
 }
 
-/*  FIN MITAD IZQUIERDA */
+/*  Fin mitad izquierda */
 
-/*  MITAD DERECHA   */
+/*  Mitad derecha   */
 .mitad-derecha {
     overflow: hidden;
     position: fixed;
@@ -179,7 +276,7 @@ p {
     color: #f499b8;
 }
 
-.mitad-derecha>h5 {
+.mitad-derecha h5 {
     font-size: 20px;
     margin-top: -3%;
     margin-left: 15%;
@@ -218,13 +315,12 @@ p {
     border: none;
 }
 
-/*Checkbox personalizado*/
+/*  Checkbox    */
 .custom-checkbox input[type="checkbox"] {
     display: none;
     /* Oculta el input original */
 }
 
-/* Estilo de la casilla de verificación personalizada */
 .custom-checkbox input[type="checkbox"]+label::before {
     content: "";
     display: inline-block;
@@ -234,52 +330,53 @@ p {
     margin-right: 10px;
     vertical-align: middle;
     border: 2px solid #f499b8;
-    /* Color azul original */
     border-radius: 4px;
-    text-align:center;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-/* Estilo cuando la casilla de verificación está marcada */
 .custom-checkbox input[type="checkbox"]:checked+label::before {
+    /* Estilo cuando la casilla de verificación está marcada */
     background-color: #8ad199;
-    /* Color azul original */
     content: "\2714";
     color: rgba(0, 76, 27, 255);
 }
 
-/* Estilo de la etiqueta asociada a la casilla de verificación */
 .custom-checkbox label {
+    /* Estilo de la etiqueta asociada a la casilla de verificación */
     cursor: pointer;
     vertical-align: middle;
+    color: #8ad199;
 }
 
-.recuerdame{
-    color:#8ad199;
-}
-
-/*  FIN MITAD DERECHA   */
+/*  Fin checkbox    */
+/*  Fin mitad derecha   */
 
 /*  FIN PAGINA REGISTRARSE  */
 /*--------------------------------------------------------------------------------*/
 /*  PAGINA INICIAR SESIÓN  */
 
+
 .login {
-    margin-top: 15%;
     margin-right: 15%;
     margin-left: 15%;
-    background-image:url('Fondo2.jpg');
+}
+
+.fondoiniciarsesion {
+    background-image: url('Fondo4.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .tituloinicia {
+    margin-top: 15%;
     margin-left: 15%;
     margin-bottom: 3%;
 }
 
-.login>h5 {
+.login h5 {
     font-size: 20px;
     margin-top: -2%;
     margin-left: 15%;
@@ -297,88 +394,3 @@ p {
 
 /*  FIN PAGINA INICIAR SESION  */
 /*--------------------------------------------------------------------------------*/
-/*  PAGINA INDEX  */
-
-/* The side navigation menu */
-
-.container {
-    margin-top: 2px;
-    margin-left: -53%;
-    display: inline-block;
-    cursor: pointer;
-    z-index: 5;
-}
-
-.bar1,
-.bar2,
-.bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-.change .bar1 {
-    transform: translate(0, 12px) rotate(-45deg);
-    margin-left: 300%;
-}
-
-.change .bar2 {
-    opacity: 0;
-    transition: 0.2s;
-}
-
-.change .bar3 {
-    transform: translate(0, -12px) rotate(45deg);
-    margin-left: 300%;
-}
-
-.sidenav {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
-    position: fixed;
-    /* Stay in place */
-    z-index: 0;
-    /* Stay on top */
-    top: 0;
-    /* Stay at the top */
-    left: 0;
-    background-color: #2b2929;
-    /* Black*/
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 100px;
-    /* Place content 60px from the top */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-    background-color: rgba(255, 255, 255, 0);
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 25px;
-    left: 125px;
-    right: 25px;
-    font-size: 50px;
-}
-
-/*  FIN PAGINA INDEX  */

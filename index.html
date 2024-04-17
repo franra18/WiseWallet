@@ -20,13 +20,12 @@
             <a href="#">Clients</a>
             <a href="#">Contact</a>
         </div>
-
-        <div class="container" onclick="myFunction(this), toggleNav()">
+        
+        <div class="iconomenu" onclick="myFunction(this), toggleNav()">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-
         <a href="index.html" class="logo">WiseWallet</a>
 
         <div class="header-right">
@@ -112,15 +111,15 @@
     </div>
     <!--    FIN PIE DE PAGINA    -->
 
+    <!--    SCRIPTS     -->
     <script>
-    
-        function myFunction(x) {
+        function myFunction(x) {  // Animación del icono del menu
             x.classList.toggle("change");
         }
-        
-        function toggleNav() {
+
+        function toggleNav() {  // Hace que el icono del menu pueda abrir y cerrar el sidenav
             const sidenav = document.getElementById("mysidenav");
-            const container = document.querySelector(".container");
+            const container = document.querySelector(".iconomenu");
 
             if (sidenav.style.width === "200px") {
                 sidenav.style.width = "0";
@@ -131,6 +130,7 @@
             }
         }
     </script>
+    <!--    FIN SCRIPTS     -->
 </body>
 
 </html>

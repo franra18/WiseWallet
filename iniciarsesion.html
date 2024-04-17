@@ -13,10 +13,9 @@
 
     <!--    CABECERA    -->
     <div class="header">
-        <div class="menu"></div>
         <a href="index.html" class="logo">WiseWallet</a>
         <div class="header-right">
-            <a href="index.html">Home</a> <!-- A la pagina que esté activa le añado class = "active" -->
+            <!-- A la pagina que esté activa le añado class = "active" -->
             <a href="#contact">Sobre nosotros</a>
             <a class="active" href="iniciarsesion.html">Iniciar Sesión</a>
         </div>
@@ -24,21 +23,24 @@
     <!--    FIN CABECERA    -->
 
     <!--    CONTENIDO PRINCIPAL   -->
-    <div class="login">
-        <h1 class="tituloinicia">Inicia sesión</h1>
-        <h5>¿No tienes cuenta? <a href="registrarse.html" class="texto-registra">Regístrate</a></h5>
-    <form action="index.html" method="post">
-        <div class="cuadrostexto">
-            <input type="text" name="Correo" placeholder="Correo electrónico" required>
-            <input type="text" name="Contraseña" placeholder="Contraseña" required>
-        </div>
+    <div class="fondoiniciarsesion">
+        <div class="login">
+            <h1 class="tituloinicia">Inicia sesión</h1>
+            <h5>¿No tienes cuenta? <a href="registrarse.html" class="texto-registra">Regístrate</a></h5>
 
-        <input class="cuadrotic" type="checkbox" checked="checked" name="remember"> Recuérdame
-        <p></p>
-        <p></p> <!-- espacio vacio pq no me deja poner margen   -->
-        <p></p>
-        <input type="submit" value="Iniciar sesión" class="botonregistro" href="index.html"></input>
-    </form>
+            <form action="index.html" method="post">
+                <div class="cuadrostexto">
+                    <input type="text" name="Correo" placeholder="Correo electrónico" required>
+                    <input type="text" name="Contraseña" placeholder="Contraseña" required>
+                </div>
+
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="miCheckbox">
+                    <label for="miCheckbox" class="Recuerdame">Recuérdame</label>
+                </div>
+                <input type="submit" value="Iniciar sesión" class="botonregistro"></input>
+            </form>
+        </div>
     </div>
     <!--    FIN CONTENIDO PRINCIPAL     -->
 
