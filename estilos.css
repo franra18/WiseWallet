@@ -139,7 +139,7 @@ body {
 }
 
 .change .bar1 {
-    transform: translate(0, 12px) rotate(-45deg);
+    transform: translate(0, 11px) rotate(-45deg);
     margin-left: 300%;
 }
 
@@ -149,7 +149,7 @@ body {
 }
 
 .change .bar3 {
-    transform: translate(0, -12px) rotate(45deg);
+    transform: translate(0, -11px) rotate(45deg);
     margin-left: 300%;
 }
 
@@ -184,15 +184,6 @@ body {
     background-color: rgba(255, 255, 255, 0);
 }
 
-
-.sidenav .closebtn {
-    /* Position and style the close button (top right corner) */
-    position: absolute;
-    top: 25px;
-    left: 125px;
-    right: 25px;
-    font-size: 50px;
-}
 
 /*  Fin menú desplegable*/
 
@@ -231,7 +222,7 @@ body {
     color: white;
 }
 
-.header-right a:hover {
+.header-register a:hover {
     background-color: rgba(41, 119, 46, 0.858);
 }
 
