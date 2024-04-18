@@ -48,7 +48,7 @@ body {
     position: initial;
 }
 
-.header a.logo_iniciar{
+.header a.logo_iniciar {
 
     font-size: 25px;
     font-weight: bold;
@@ -119,7 +119,7 @@ body {
 
 /*  Fin pie de página*/
 
-/*  Menú desplegable    */
+/*  Menú desplegable (sidenav)   */
 .iconomenu {
     margin-top: 2px;
     float: left;
@@ -169,22 +169,55 @@ body {
 }
 
 
-.sidenav a {
+.sidenav a, .dropdown-btn {
     /* The navigation menu links */
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
+    text-align: left;
+    margin-top: 10px;
     transition: 0.3s;
+    width: 100%;
 }
 
-.sidenav a:hover {
+.sidenav a:hover, .dropdown-btn:hover {
     color: #f1f1f1;
     background-color: rgba(255, 255, 255, 0);
 }
 
+/*    Dropdown    */
+.dropdown-btn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    font-family: MiFuente;
+}
 
+.dropdown-container {
+    display:none;
+    background-color: #212020;
+    padding-left: 8px;
+}
+
+.dropdown-container a{
+    margin-top: 0;
+    font-size: 20px;
+    width: 100%;
+}
+
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+.opcionactiva {
+    background-color: rgb(54, 50, 46);
+    color: white;
+}
+/*     Fin Dropdown    */
 /*  Fin menú desplegable*/
 
 /*  FIN PAGINA INDEX    */
@@ -322,7 +355,7 @@ body {
 
 .custom-checkbox {
     display: block;
-    margin-left:15%;
+    margin-left: 15%;
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
@@ -332,20 +365,20 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color:#f499b8;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .custom-checkbox input {
+    color: #f499b8;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
+}
+
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -353,32 +386,32 @@ body {
     width: 18px;
     background-color: #8ad199;
     border: 2px solid #f499b8;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .custom-checkbox:hover input ~ .checkmark {
-    background-color:#75cb88 ;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .custom-checkbox input:checked ~ .checkmark {
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input~.checkmark {
+    background-color: #75cb88;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked~.checkmark {
     background-color: #8ad199;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .custom-checkbox input:checked ~ .checkmark:after {
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked~.checkmark:after {
     display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .custom-checkbox .checkmark:after {
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
     left: 6px;
     width: 5px;
     height: 11px;
@@ -387,7 +420,7 @@ body {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
 /*  Fin checkbox    */
 /*  Fin mitad derecha   */
@@ -400,7 +433,7 @@ body {
 .login {
     margin-right: 15%;
     margin-left: 15%;
-    
+
 }
 
 .fondoiniciarsesion {
