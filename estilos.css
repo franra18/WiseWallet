@@ -265,6 +265,10 @@ body {
     background-color: rgba(41, 119, 46, 0.858);
 }
 
+.header-register .logo:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 /*  Fin cabecera registrarse    */
 
 /*  Mitad izquierda  */
