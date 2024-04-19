@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú con enlaces y transición suave</title>
+<style>
+  .contenedor {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px; /* Ancho del menú */
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease; /* Transición suave */
+    transform: translateX(-100%);
+  }
+
+  .mostrar-menu .menu {
+    transform: translateX(0);
+  }
+
+  .contenido {
+    padding: 20px;
+  }
+
+  button {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Estilos para los enlaces */
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  }
+
+  .menu a:hover {
+    background-color: #ddd; /* Cambio de color al pasar el ratón */
+  }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+  <button onclick="toggleMenu()">Abrir/Cerrar Menú</button>
+  <ul class="menu">
+    <li><a href="#">Enlace 1</a></li>
+    <li><a href="#">Enlace 2</a></li>
+    <li><a href="#">Enlace 3</a></li>
+  </ul>
+  <div class="contenido">
+    Contenido de la página...
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.contenedor').classList.toggle('mostrar-menu');
+}
+</script>
+
+</body>
+</html>

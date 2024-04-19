@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiseWallet</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="estilos.css">
-
-    <!--link para el icono del submenu-->
+    <link rel="icon" type="image/png" href="logo.png"> <!--    Icono de la pestaña     -->
+    <link rel="stylesheet" href="estilos.css"> <!--   Enlace con el archivo css     -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Icono de la flecha hacia abajo en el menu desplegable -->
 </head>
 
 <body>
@@ -16,37 +15,52 @@
 
     <!--    CABECERA    -->
     <div class="header">
-
+        <!--        Menu        -->
         <div id="mysidenav" class="sidenav">
-            <a href="#">About</a>
-            <button class="boton-submenu">Services 
+            <!--    Dropdown    -->
+            <button class="dropdown-btn">Gastos
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="Submenu">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+            <div class="dropdown-container">
+                <a href="#">Subir</a>
+                <a href="#">Buscar</a>
+                <a href="#">Filtrar</a>
+                <a href="#">Visualizar</a>
+                <a href="#">Grupales</a>
+                <a href="#">Historial</a>
+                <a href="#">Exportar</a>
             </div>
-            <button class="boton-submenu">Dropdown 
+            <!--    Enlaces     -->
+            <a href="#">Objetivos</a>
+            <a href="#">Progreso</a>
+            <a href="#">Multimedia</a>
+            <a href="#">Mercado de </br> valores</a>
+            <a href="#">Noticias</a>
+            <!--    Dropdown    -->
+            <button class="dropdown-btn">Mi cuenta
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="Submenu">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+            <div class="dropdown-container">
+                <a href="#">Cuentas y tarjeta</a>
+                <a href="#">Foto</a>
+                <a href="#">Fecha</a>
+                <a href="#">Suscripciones</a>
+                <a href="#">Otros datos</a>
             </div>
-            <a href="#">Contact</a>
+
         </div>
-        
+
         <div class="iconomenu" onclick="myFunction(this), toggleNav()">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
+        <!--    Fin menu    -->
+
         <a href="index.html" class="logo">WiseWallet</a>
 
         <div class="header-right">
-            <a href="index.html">Sobre nosotros</a> <!-- A la pagina que esté activa le añado class = "active" -->
+            <a href="#about">Sobre nosotros</a> <!-- A la pagina que esté activa le añado class = "active" -->
             <a href="#contact">Foro</a>
             <a href="iniciarsesion.html">Iniciar Sesión</a>
         </div>
@@ -134,46 +148,43 @@
             x.classList.toggle("change");
         }
 
-        //Script para los submenus del sidenav
-        var dropdown = document.getElementsByClassName("boton-submenu");
-        var i;
-
-        for (i = 0; i < dropdown.length; i++) {
-        
-            dropdown[i].addEventListener("click", function() {
-                this.classList.toggle("submenu-activo");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-
-                    dropdownContent.style.display = "none";
-                } else {
-
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-
         function toggleNav() {  // Hace que el icono del menu pueda abrir y cerrar el sidenav
             const sidenav = document.getElementById("mysidenav");
             const container = document.querySelector(".iconomenu");
-
-            //Todos los submenus posibles
-            const dropdownContentServices = document.querySelector(".sidenav .boton-submenu:nth-of-type(1) + .Submenu");
-            const dropdownContentDropdown = document.querySelector(".sidenav .boton-submenu:nth-of-type(2) + .Submenu");
-            const Submenuactivo = document.querySelector(".submenu-activo");
+            const submenu1 = document.querySelector(".sidenav .dropdown-container:nth-of-type(1)");
+            const submenu2 = document.querySelector(".sidenav .dropdown-container:nth-of-type(2)");
+            const opcionactiva1 = document.querySelector(".sidenav .opcionactiva:nth-of-type(1)");
+            const opcionactiva2 = document.querySelector(".sidenav .opcionactiva:nth-of-type(2)");
 
             if (sidenav.style.width === "200px") {
                 sidenav.style.width = "0";
                 container.classList.remove("change");
-                //cierra los submenus activos
-                dropdownContentServices.style.display = "none";
-                dropdownContentDropdown.style.display = "none";
-                Submenuactivo.classList.remove("submenu-activo")
-
+                
+                submenu1.style.display = "none";
+                submenu2.style.display = "none";
+                opcionactiva1.classList.remove("opcionactiva");
+                opcionactiva2.classList.remove("opcionactiva");
+                
             } else {
                 sidenav.style.width = "200px";
-                container.classList.add("change");
+                container.classList.add("change");                
             }
+        }
+
+        //DROPDOWN
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("opcionactiva");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
         }
     </script>
     <!--    FIN SCRIPTS     -->
