@@ -6,35 +6,26 @@
     <title>WiseWallet</title>
     <link rel="icon" type="image/png" href="logo.png"> <!--    Icono de la pestaña     -->
     <link rel="stylesheet" href="estilos.css"> <!--   Enlace con el archivo css     -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Icono de la flecha hacia abajo en el menu desplegable -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <!--Asi se comenta en el html-->
-
-    <!--    CABECERA    -->
-    <div class="header">
-        <!--        Menu        -->
-
-        <div class="iconomenu" onclick="myFunction(this), toggleNav()">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-        <!--    Fin menu    -->
-
-        <a href="index.html" class="logo">WiseWallet</a>
-
-        <div class="header-right">
-            <a href="#about">Sobre nosotros</a> <!-- A la pagina que esté activa le añado class = "active" -->
-            <a href="#contact">Foro</a>
-            <a href="iniciarsesion.html">Iniciar Sesión</a>
-        </div>
-    </div>
-    <!--    FIN CABECERA    -->
-
+    <!--        Menu        -->
     <div id="mysidenav" class="sidenav">
+        <!--    Dropdown    -->
+        <button class="dropdown-btn">Mi cuenta
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Cuentas y </br> tarjetas</a>
+            <a href="#">Foto</a>
+            <a href="#">Fecha</a>
+            <a href="#">Suscripciones</a>
+            <a href="#">Otros datos</a>
+        </div>
         <!--    Dropdown    -->
         <button class="dropdown-btn">Gastos
             <i class="fa fa-caret-down"></i>
@@ -54,19 +45,25 @@
         <a href="#">Multimedia</a>
         <a href="#">Mercado de </br> valores</a>
         <a href="#">Noticias</a>
-        <!--    Dropdown    -->
-        <button class="dropdown-btn">Mi cuenta
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="#">Cuentas y tarjeta</a>
-            <a href="#">Foto</a>
-            <a href="#">Fecha</a>
-            <a href="#">Suscripciones</a>
-            <a href="#">Otros datos</a>
-        </div>
 
     </div>
+    <!--    Fin menu    -->
+
+    <!--    CABECERA    -->
+    <a href="iniciarsesion.html" class="logo">WiseWallet</a>
+    <div class="header">
+
+        <div class="iconomenu" onclick="myFunction(this), toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="header-right">
+            <a href="#about">Sobre nosotros</a> <!-- A la pagina que esté activa le añado class = "active" -->
+        </div>
+    </div>
+    <!--    FIN CABECERA    -->
 
     <!--    CONTENIDO PRINCIPAL   -->
     <div class="content">
@@ -160,15 +157,15 @@
             if (sidenav.style.width === "200px") {
                 sidenav.style.width = "0";
                 container.classList.remove("change");
-                
+
                 submenu1.style.display = "none";
                 submenu2.style.display = "none";
-                opcionactiva1.classList.remove("opcionactiva");
-                opcionactiva2.classList.remove("opcionactiva");
-                
+                opcionactiva1.classList.toggle("opcionactiva");
+                opcionactiva2.classList.toggle("opcionactiva");
+
             } else {
                 sidenav.style.width = "200px";
-                container.classList.add("change");                
+                container.classList.add("change");
             }
         }
 

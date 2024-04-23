@@ -2,6 +2,7 @@
 
 html {
     font-family: 'Fuente1';
+    margin: 0;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
     right: 0;
     background-color: #2b2929;
     padding: 20px 10px;
-    z-index:101;
+    z-index: 100;
 }
 
 .header a {
@@ -41,16 +42,22 @@ body {
 }
 
 
-.header a.logo {
+a.logo {
     /*  Letras WiseWallet centro cabecera    */
-    font-size: 25px;
+    margin-top: 1%;
+    top: 0;
+    font-size: 30px;
+    margin-left: 44%;
     font-weight: bold;
-    margin-left: 40%;
-    position: initial;
+    position: fixed;
+    z-index: 105;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
 }
 
 .header a.logo_iniciar {
-
     font-size: 25px;
     font-weight: bold;
     position: initial;
@@ -77,6 +84,7 @@ body {
 .header-right {
     float: right;
 }
+
 
 /*  Fin cabecera    */
 
@@ -115,17 +123,18 @@ body {
     right: 0;
     background-color: #2b292900;
     /* De momento transparente */
+    padding: 0;
 }
 
 /*  Fin pie de página*/
 
 /*  Menú desplegable (sidenav)   */
 .iconomenu {
+    position: fixed;
     margin-top: 2px;
     float: left;
     margin-left: 2%;
-    position:fixed;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .bar1,
@@ -156,36 +165,25 @@ body {
 }
 
 .sidenav {
+    z-index: 99;
     height: 100%;
+    max-height: 82.5vh;
     width: 0;
     position: fixed;
-    z-index: 0;
-    margin-top:-7.5%;
+    top: 0;
     left: 0;
     background-color: #2b2929;
     overflow-x: hidden;
     /* Deshabilita el scroll horizontal */
-    max-height: 87.75vh;
-    overflow-y:auto;
+    overflow-y: auto;
+    padding-top: 8%;
     transition: 0.5s;
-    z-index:98;
     /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/*scrollbar invisible*/
-
 .sidenav::-webkit-scrollbar {
-    width: 10px;
-    height:10px;
-}
-
-.sidenav::-webkit-scrollbar-track {
-    background:#2b2929;
-}
-   
-  /* Handle */
-.sidenav::-webkit-scrollbar-thumb {
-    background: rgb(135, 135, 135); 
+    /*  Para ocultar la barra de desplazamiento del menu    */
+    display: none;
 }
 
 .sidenav a,
@@ -220,14 +218,15 @@ body {
 
 .dropdown-container {
     display: none;
+    margin-bottom: 0;
 }
 
 .dropdown-container a {
     margin-top: 0;
     font-size: 20px;
     width: 100%;
-    background-color: black;
     border-radius: 0;
+    background-color: black;
 }
 
 .fa-caret-down {
@@ -275,7 +274,7 @@ body {
     font-size: 25px;
     font-weight: bold;
     float: left;
-    color: white;
+    color: rgba(0, 76, 27, 255);
 }
 
 .header-register a:hover {
@@ -303,11 +302,12 @@ body {
 
 .TituloPagRegistro {
     margin-top: 12%;
-    margin-left: 15%;
-    margin-right: 10%;
+    margin-left: 12%;
+    margin-right: 8%;
     font-size: 90px;
     text-align: left;
-    color: #c1d1f6;
+    /* color: #eeffdb; */
+    color: #d6ecdf;
 }
 
 .textopagregistro {
@@ -395,7 +395,6 @@ body {
     color: #f499b8;
 }
 
-/* Hide the browser's default checkbox */
 .custom-checkbox input {
     position: absolute;
     opacity: 0;
@@ -404,7 +403,6 @@ body {
     width: 0;
 }
 
-/* Create a custom checkbox */
 .checkmark {
     position: absolute;
     top: 0;
@@ -415,29 +413,25 @@ body {
     border: 2px solid #f499b8;
 }
 
-/* On mouse-over, add a grey background color */
 .custom-checkbox:hover input~.checkmark {
     background-color: #75cb88;
 }
 
-/* When the checkbox is checked, add a blue background */
 .custom-checkbox input:checked~.checkmark {
     background-color: #8ad199;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the checkmark when checked */
 .custom-checkbox input:checked~.checkmark:after {
+    /*    Animación de mostrar el checkmark      */
     display: block;
 }
 
-/* Style the checkmark/indicator */
 .custom-checkbox .checkmark:after {
     left: 6px;
     width: 5px;
@@ -464,7 +458,7 @@ body {
 }
 
 .fondoiniciarsesion {
-    background-image: url('Fondo4.jpg');
+    background-image: url('Fondo2.jpg');
     background-size: cover;
     overflow: hidden;
     height: 100%;
