@@ -1,0 +1,35 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseWallet</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="headerfooter.css">
+</head>
+
+<body>
+    <!--Asi se comenta en el html-->
+
+    <!--    CABECERA    -->
+    <div class="login">
+        <div class="header">
+            <a href="index.html" class="logo_iniciar">WiseWallet</a>
+            <div class="header-right">
+                <!-- A la pagina que esté activa le añado class = "active" -->
+                <a href="#contact">Sobre nosotros</a>
+                <button onclick="volverAtras()">Volver Atrás</button>
+            </div>
+        </div>
+    </div>
+    <!--    FIN CABECERA    -->
+
+    <script>
+        function volverAtras() {
+            window.history.back(); // Esta función de JavaScript te lleva a la página anterior en el historial del navegador
+        }
+    </script>
+</body>
+
+</html>

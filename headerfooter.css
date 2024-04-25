@@ -79,12 +79,9 @@ a.logo {
     background-color: darkgrey;
 }
 
-
 .header a.logo:hover {
     background-color: rgba(0, 0, 0, 0);
 }
-
-
 
 .header-right {
     float: right;
