@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiseWallet</title>
     <link rel="icon" type="image/png" href="logo.png"> <!--    Icono de la pestaña     -->
-    <link rel="stylesheet" href="estilos.css"> <!--   Enlace con el archivo css     -->
+    <link rel="stylesheet" href="headerfooter.css"> <!--   Enlace con el archivo css     -->
+    <link rel="stylesheet" href="index.css">
     <!-- Icono de la flecha hacia abajo en el menu desplegable -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
+
+<!--    Codigo Alpha Vantage: RKKRW3RKQQR6UBVE  -->
 
 <body>
     <!--Asi se comenta en el html-->
@@ -158,8 +160,11 @@
                 sidenav.style.width = "0";
                 container.classList.remove("change");
 
+                //Ocultar submenus
                 submenu1.style.display = "none";
                 submenu2.style.display = "none";
+
+                //Eliminar clase "opcionactiva"
                 opcionactiva1.classList.toggle("opcionactiva");
                 opcionactiva2.classList.toggle("opcionactiva");
 
