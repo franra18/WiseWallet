@@ -29,6 +29,18 @@ body {
     /* puedes agregar más estilos de la fuente aquí, como font-weight y font-style */
 }
 
+@font-face {
+    font-family: 'Fuente2';
+    src: url('Lamarkie.otf') format('opentype');
+    /* puedes agregar más estilos de la fuente aquí, como font-weight y font-style */
+}
+
+@font-face {
+    font-family: 'Fuente3';
+    src: url('Petrona-VariableFont_wght.ttf') format('opentype');
+    /* puedes agregar más estilos de la fuente aquí, como font-weight y font-style */
+}
+
 /*--------------------------------------------------------------------------------*/
 
 /*  CABECERA    */
@@ -42,18 +54,6 @@ body {
     padding: 20px 10px;
     z-index: 100;
 }
-
-.header a {
-    float: left;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
-}
-
 
 a.logo {
     /*  Letras WiseWallet centro cabecera    */
@@ -70,13 +70,40 @@ a.logo {
     border-radius: 4px;
 }
 
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+}
+
 .header a.active {
     background-color: rgb(196, 112, 9);
     color: white;
 }
 
-.header a:hover {
-    background-color: darkgrey;
+.header a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    /* Tamaño del borde */
+    background-color: transparent;
+    /* Color inicial del borde */
+    transition: background-color 0.2s ease
+}
+
+.header a:hover::after {
+    /* Color del borde al hacer hover */
+    background-color: white;
 }
 
 .header a.logo:hover {
@@ -86,6 +113,7 @@ a.logo {
 .header-right {
     float: right;
 }
+
 /*  Fin cabecera    */
 
 /*  Adaptación de la cabecera cuando se reduce el tamaño   */
@@ -100,6 +128,7 @@ a.logo {
         float: none;
     }
 }
+
 /*  Fin adaptación  */
 
 
@@ -213,6 +242,7 @@ a.logo {
     background-color: rgb(54, 50, 46);
     color: white;
 }
+
 /*     Fin Dropdown    */
 /*  Fin menú desplegable  */
 /*  FIN CABECERA    */
@@ -229,4 +259,5 @@ a.logo {
     /* De momento transparente */
     padding: 0;
 }
+
 /*  FIN PIE DE PAGINA   */
