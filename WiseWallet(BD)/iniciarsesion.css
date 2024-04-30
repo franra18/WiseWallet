@@ -1,0 +1,176 @@
+/*  PAGINA INICIAR SESIÓN  */
+
+.login {
+    /*    Recuadros login     */
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.login .header a.logo_iniciar {
+    /*  Titulo WiseWallet cabecera  */
+    font-size: 25px;
+    font-weight: bold;
+    position: initial;
+}
+
+.login .header a.logo_iniciar:hover {
+    /*  Hover titulo WiseWallet cabecera    */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.login .header{
+    /*     Color cabecera    */
+    background-color: #59260f;
+}
+
+.login .header a:hover{
+    background-color: #e06277;
+}
+
+.login .header .logo:hover{
+    background-color:#2b292900;
+}
+
+.fondoiniciarsesion {
+    background-image: url('Fondo2.jpg'); /*Fondo 4??*/
+    background-size: cover;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.tituloinicia {
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-bottom: 3%;
+}
+
+.login h5 {
+    font-size: 20px;
+    margin-top: -2%;
+    margin-left: 15%;
+    text-decoration: none;
+}
+
+.tituloinicia, .login h5{
+    color: #59260f;
+}
+
+.texto-registra {
+    color: #b03f52;
+    text-decoration: none;
+}
+
+.texto-registra:hover {
+    color: #870f23;
+}
+
+/*  Colores checkbox y boton inicia sesion  */
+.login .custom-checkbox{
+    color: #59260f;
+}
+
+.login .checkmark {
+    background-color: #ff9faf;
+    border: 2px solid #59260f;
+}
+
+.login .custom-checkbox:hover input~.checkmark, .custom-checkbox input:checked~.checkmark {
+    background-color: #e06277;
+}
+
+.login .botonregistro {
+    background-color: #59260f;
+    color: white;
+}
+/*  Fin colores checkbox y boton inicia sesion  */
+
+.cuadrostexto input {
+    margin-left: 15%;
+    width: 70%;
+    height: 55px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.botonregistro {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 76, 27, 255);
+    padding: 12px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+    height: 55px;
+    cursor: pointer;
+    border: none;
+}
+
+/*  Checkbox    */
+.custom-checkbox {
+    display: block;
+    margin-left: 15%;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    /*    Animación de mostrar el checkmark      */
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    width: 5px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*  Fin checkbox    */
+
+/* Mensajes inicio de sesion */
+
+.error {
+    color:red;
+    padding-top:10px;
+    font-size: 20px;
+    margin-top: -2%;
+    margin-left: 15%;
+}
+
+/* Fin mensajes inicio de sesion */
+
+/*  FIN PAGINA INICIAR SESION  */
