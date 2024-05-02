@@ -84,8 +84,7 @@ a.logo {
 }
 
 .header a.active {
-    background-color: rgb(196, 112, 9);
-    color: white;
+    background-color: white;
 }
 
 .header a::after {
@@ -98,12 +97,13 @@ a.logo {
     /* Tamaño del borde */
     background-color: transparent;
     /* Color inicial del borde */
-    transition: background-color 0.2s ease
+    transition: background-color 0.3s ease;
+    /* Transición suave para el cambio de color */
 }
 
 .header a:hover::after {
-    /* Color del borde al hacer hover */
     background-color: white;
+    /* Color del borde al hacer hover */
 }
 
 .header a.logo:hover {

@@ -5,8 +5,8 @@
     margin-right: 25%;
     text-align: center;
     margin-top: 200px;
-    margin-bottom: 200px;
-    font-family:'Lucida Sans';
+    margin-bottom: 5%;
+    font-family: 'Lucida Sans';
 }
 
 .content h1 {
@@ -14,5 +14,31 @@
     font-weight: 150;
     font-family: Fuente3;
 }
+
 /*  Fin párrafos*/
+
+/*  Textos separados por dividers verticales    */
+.container {
+    display: flex;
+    justify-content: space-between;    
+    align-items: flex-start;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+}
+
+.divider {
+    height: 170px;
+    /* Cambio de altura para adaptarse al contenido */
+    border-left: 2px solid black;
+    margin: 0 10px;
+}
+
+.contenido-dividers {
+    text-align: center;
+    padding: 0 20px;
+    text-align: justify;
+}
+/*  Fin textos separados por dividers   */
+
 /*     FIN PAGINA INDEX    */

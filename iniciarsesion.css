@@ -11,9 +11,10 @@
     font-size: 25px;
     font-weight: bold;
     position: initial;
+    text-decoration: none;
 }
 
-.login .header a.logo_iniciar:hover {
+.login .header a:hover {
     /*  Hover titulo WiseWallet cabecera    */
     background-color: rgba(0, 0, 0, 0);
 }
@@ -23,13 +24,6 @@
     background-color: #59260f;
 }
 
-.login .header a:hover{
-    background-color: #e06277;
-}
-
-.login .header .logo:hover{
-    background-color:#2b292900;
-}
 
 .fondoiniciarsesion {
     background-image: url('Fondo2.jpg'); /*Fondo 4??*/
