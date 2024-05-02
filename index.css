@@ -15,6 +15,21 @@
     font-family: Fuente3;
 }
 
+.content2 {
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: 'Lucida Sans';
+}
+
+.content2 h1 {
+    font-size: 40px;
+    text-align: left;
+    font-family: Fuente3;
+}
+
 /*  Fin párrafos*/
 
 /*  Textos separados por dividers verticales    */
@@ -24,7 +39,7 @@
     align-items: flex-start;
     margin-left: 15%;
     margin-right: 15%;
-    margin-top: 3%;
+    margin-top: 5%;
 }
 
 .divider {

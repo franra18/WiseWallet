@@ -10,11 +10,11 @@
     /*  Titulo WiseWallet cabecera  */
     font-size: 25px;
     font-weight: bold;
-    position: initial;
+    position: fixed;
     text-decoration: none;
 }
 
-.login .header a:hover {
+.login .header a.logo_iniciar:hover::after {
     /*  Hover titulo WiseWallet cabecera    */
     background-color: rgba(0, 0, 0, 0);
 }
