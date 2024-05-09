@@ -250,14 +250,12 @@ a.logo {
 
 /*  PIE DE PAGINA  */
 .footer {
-    overflow: hidden;
-    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #2b292900;
+    background-color: #000000;
     /* De momento transparente */
-    padding: 0;
+    padding: 90px;
 }
 
 /*  FIN PIE DE PAGINA   */
