@@ -258,4 +258,10 @@ a.logo {
     padding: 90px;
 }
 
+.footer a{
+    float: right;
+    color: white;
+    margin-left: 50px;
+}
+
 /*  FIN PIE DE PAGINA   */
