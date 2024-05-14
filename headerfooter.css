@@ -85,6 +85,7 @@ a.logo {
 }
 
 .header a::after {
+    /*  Lineas de subrayado al hacer hover sobre una opcion de la cabecera  */
     content: '';
     position: absolute;
     left: 0;

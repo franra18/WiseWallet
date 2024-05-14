@@ -30,6 +30,13 @@
     font-family: Fuente3;
 }
 
+.imagen{
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+
 /*  Fin párrafos*/
 
 /*  Textos separados por dividers verticales    */
