@@ -9,9 +9,6 @@ REQUISITOS:
 - Busqueda
 - Filtrado
 - Creacion de objetivos
-- Soporte multimoneda
-- Bilingüe
-- Multimedia
 */
 
 html {
@@ -256,12 +253,14 @@ a.logo {
     background-color: #000000;
     /* De momento transparente */
     padding: 90px;
+    display: flex;
+    justify-content: center;
 }
 
 .footer a{
-    float: right;
     color: white;
-    margin-left: 50px;
+    margin: 0 20px;
 }
+
 
 /*  FIN PIE DE PAGINA   */

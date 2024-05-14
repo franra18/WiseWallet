@@ -1,0 +1,66 @@
+
+h1 {
+    margin-top: 10%;
+    display: flex;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.parrafo p {
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+    justify-content: center;
+    text-align: justify;
+    font-family: Fuente3;
+    font-size: 20px;
+    margin-bottom: 4%;
+    margin-top: 2%;
+}
+
+.suscripciones {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8%;
+}
+
+.suscripcion {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.suscripcion h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.suscripcion p {
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 2%;
+    font-family: Fuente3;
+}
+
+.suscripcion button {
+    background-color: rgba(0, 76, 27, 255);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.suscripcion button:hover{
+    background-color: rgba(41, 119, 46, 0.858);
+}
