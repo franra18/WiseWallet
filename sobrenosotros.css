@@ -6,16 +6,45 @@
     text-align: center;
 }
 
-h2, p{
+h2, p {
     /*  Separaciones laterales parrafos */
     margin-left: 15%;
     margin-right: 15%;
 }
 
-h2{
+h2 {
     font-size: 30px;
 }
 
 p {
     font-size: 20px;
+    font-family: Fuente3;
+    text-align: justify;
+}
+
+/*  Imagenes alineadas con el texto  */
+.container {
+    clear: both;
+    /* Asegura que no haya elementos flotantes alrededor */
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 6%;
+}
+
+.container h2, .container p {
+    margin: 0;
+}
+
+.imagen-izquierda {
+    float: left;
+    /* Hace que la imagen flote a la izquierda */
+    margin-right: 50px;
+    /* Espacio entre la imagen y el texto */
+    height: 250px;
+}
+
+.imagen-derecha {
+    float: right;
+    margin-left: 50px;
+    height: 250px;
 }

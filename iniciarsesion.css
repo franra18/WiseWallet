@@ -14,19 +14,38 @@
     text-decoration: none;
 }
 
-.login .header a.logo_iniciar:hover::after {
-    /*  Hover titulo WiseWallet cabecera    */
+.login .header a{
+    float: left;
+    color: #8ad199;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header a:hover {
+    background-color: rgba(41, 119, 46, 0.858);
+}
+
+.header a.logo_iniciar:hover{
+    background-color: #00000000;
+}
+
+.login .header a:hover::after {
+    /*  Quitar las lineas al hacer hover    */
     background-color: rgba(0, 0, 0, 0);
 }
 
 .login .header{
     /*     Color cabecera    */
-    background-color: #59260f;
+    background-color: #59260f00;
 }
 
 
 .fondoiniciarsesion {
-    background-image: url('Fondo4.png'); /*Fondo 4??*/
+    background-color: rgba(0, 76, 27, 255);
     background-size: cover;
     overflow: hidden;
     height: 100%;
@@ -47,35 +66,35 @@
 }
 
 .tituloinicia, .login h5{
-    color: #59260f;
+    color: #f5b3c9;;
 }
 
 .texto-registra {
-    color: #b03f52;
+    color: #8ad199;
     text-decoration: none;
 }
 
 .texto-registra:hover {
-    color: #870f23;
+    color: #4d965d;
 }
 
 /*  Colores checkbox y boton inicia sesion  */
 .login .custom-checkbox{
-    color: #59260f;
+    color: #f5b3c9;;
 }
 
 .login .checkmark {
-    background-color: #ff9faf;
-    border: 2px solid #59260f;
+    background-color: #8ad199;
+    border: 2px solid #f5b3c9;;
 }
 
 .login .custom-checkbox:hover input~.checkmark, .custom-checkbox input:checked~.checkmark {
-    background-color: #e06277;
+    background-color: #75cb88;
 }
 
 .login .botonregistro {
-    background-color: #59260f;
-    color: white;
+    background-color: #f5b3c9;
+    color: rgba(0, 76, 27, 255);
 }
 /*  Fin colores checkbox y boton inicia sesion  */
 
@@ -91,7 +110,7 @@
 .botonregistro {
     text-decoration: none;
     font-size: 18px;
-    color: rgba(0, 76, 27, 255);
+    color: #8ad199;
     padding: 12px;
     width: 70%;
     margin-left: 15%;
