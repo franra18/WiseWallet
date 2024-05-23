@@ -1,0 +1,180 @@
+.Datos-perfil{
+    margin-top:75px;
+    width:65%;
+    position:relative;
+    height:82.6%;
+    left:12.5%;
+    display:block;
+    padding-top:3%;
+    background-color:rgb(166, 192, 191);
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.Imagen-perfil{
+
+    width:100px;
+}
+
+.Imagen-perfil img{
+    border:black;
+    border-width:4px;
+    border-style:solid;
+    border-radius:50%;
+    height:100px;
+    width:100px;
+    margin-top:20px;
+}
+
+.Nombre{
+    top: -17.5%;
+    left:125px;
+    position:relative;
+    width:50%;
+    font-size: 25px;
+}
+
+.Datos{
+
+    margin-top:-5%;
+}
+
+.Datos h4{
+
+    color:rgb(255, 255, 255);
+    font-size: 17px;
+    border:black;
+    border-width:2px;
+    border-style:solid;
+    padding:10px;
+    background-color:#2b2929;
+    font-family:'Lucida Sans';
+}
+
+.boton-CerrarSesion{
+
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 76, 27, 255);
+    padding: 12px;
+    width: 25%;
+    height: 45px;
+    cursor: pointer;
+    border: none;
+    font-family:'Lucida Sans';
+}
+
+.boton-CerrarSesion:hover{
+
+    background-color: rgb(214, 214, 214);
+}
+
+.boton-BorrarFoto{
+
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 76, 27, 255);
+    padding: 12px;
+    width: 25%;
+    height: 45px;
+    cursor: pointer;
+    border: none;
+    font-family:'Lucida Sans';
+}
+
+.boton-BorrarFoto:hover{
+
+    background-color: rgb(214, 214, 214);
+}
+
+.boton-CambiarFoto{
+
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 76, 27, 255);
+    padding: 12px;
+    width: 25%;
+    height: 45px;
+    cursor: pointer;
+    border: none;
+    font-family:'Lucida Sans';
+}
+
+.boton-CambiarFoto:hover{
+
+    background-color: rgb(214, 214, 214);
+}
+
+.boton-personalizado {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width:40px;
+    height:40px;
+    display: inline-block;
+    cursor: pointer;
+    border:rgb(80, 80, 80);
+    border-style:solid;
+    border-width:3px;
+    border-radius:0px;
+}
+
+.boton-personalizado:hover{
+
+    color:rgb(99, 99, 99);
+}
+
+.fa-upload{
+
+    margin-top:30%;
+    margin-left:30%;
+}
+
+.fa-eye, .fa-eye-slash{
+
+    color:white;
+    font-size:20px !important;
+}
+
+.fa-eye:hover, .fa-eye-slash:hover{
+
+    color:rgb(220, 220, 220);
+    cursor:pointer;
+}
+
+.Editar{
+    position:relative;
+    float:right;
+}
+
+.Editar_env{
+
+    background:none;
+    border:none;
+    color:white;
+    font-family:'Lucida Sans';
+}
+
+.Editar_env:hover{
+
+    cursor:pointer;
+}
+
+.Editar_fech{
+
+    background:none;
+    border:white 1px solid;
+    border-radius:3px;
+    color:white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+
+    margin-left:-5px;
+    background-color:white;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+
+    cursor:pointer;
+}

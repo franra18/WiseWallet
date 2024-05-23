@@ -1,0 +1,203 @@
+/*  PAGINA REGISTRARSE  */
+
+/*  Cabecera registrarse    */
+.header-register {
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 10px;
+}
+
+.header-register a {
+    float: left;
+    color: #8ad199;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+.header-register a.logo {
+    margin-left: 5%;
+    margin-top: 1%;
+    font-size: 25px;
+    font-weight: bold;
+    float: left;
+    color: rgba(0, 76, 27, 255);
+}
+
+.header-register a:hover {
+    background-color: rgba(41, 119, 46, 0.858);
+}
+
+.header-register .logo:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/*  Fin cabecera registrarse    */
+
+/*  Mitad izquierda  */
+.mitad-izquierda {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 35%;
+    background-image: url('Fondo1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.TituloPagRegistro {
+    margin-top: 12%;
+    margin-left: 12%;
+    margin-right: 8%;
+    font-size: 90px;
+    text-align: left;
+    /* color: #eeffdb; */
+    color: #d6ecdf;
+}
+
+.textopagregistro {
+    margin-top: -5%;
+    margin-left: 15%;
+    margin-right: 45%;
+    font-size: 25px;
+    text-align: left;
+    color: white;
+    font-style: oblique;
+}
+
+/*  Fin mitad izquierda */
+
+/*  Mitad derecha   */
+.mitad-derecha {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 65%;
+    background-color: rgba(0, 76, 27, 255);
+    height: 100%;
+}
+
+.registrate {
+    margin-top: 25%;
+    margin-left: 15%;
+    color: #f499b8;
+}
+
+.mitad-derecha h5 {
+    font-size: 20px;
+    margin-top: -3%;
+    margin-left: 15%;
+    text-decoration: none;
+}
+
+.texto-inicia {
+    color: #8ad199;
+    text-decoration: none;
+}
+
+.texto-inicia:hover {
+    color: #4d965d;
+}
+
+.cuadrostexto input {
+    margin-left: 15%;
+    width: 70%;
+    height: 55px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.botonregistro {
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(0, 76, 27, 255);
+    padding: 12px;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+    height: 55px;
+    background-color: #8ad199;
+    cursor: pointer;
+    border: none;
+}
+
+/*  Checkbox    */
+
+.custom-checkbox {
+    display: block;
+    margin-left: 15%;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #f499b8;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #8ad199;
+    border: 2px solid #f499b8;
+}
+
+.custom-checkbox:hover input~.checkmark {
+    background-color: #75cb88;
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: #8ad199;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    /*    Animación de mostrar el checkmark      */
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    width: 5px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*  Fin checkbox    */
+/*  Fin mitad derecha   */
+
+/*  FIN PAGINA REGISTRARSE  */

@@ -1,0 +1,77 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseWallet</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="headerfooter.css">
+    <link rel="stylesheet" href="registrarse2.css">
+</head>
+
+<body>
+
+    <!--    CABECERA    -->
+    <div class="header-register">
+        <a href="index.html" class="logo">WiseWallet</a>
+        <div class="header-right">
+            <a href="sobrenosotros.html">Sobre nosotros</a>
+            <a href="iniciarsesion.php">Iniciar Sesión</a>            
+        </div>
+    </div>
+    <!--    FIN CABECERA    -->
+
+    <!--    MITAD IZQUIERDA -->
+    <div class="mitad-izquierda">
+        <p class="TituloPagRegistro">WiseWallet, tu aliado para seguir el rastro a tus gastos</p>
+        <p class="textopagregistro">WiseWallet es un espacio de trabajo moderno diseñado
+            para aliviar el trabajo pesado, de modo que puedas hacer hincapié en lo que
+            realmente importa.
+        </p>
+
+    </div>
+    <!--    FIN MITAD IZQUIERDA -->
+
+    <!--    MITAD DERECHA   -->
+    <div class="mitad-derecha">
+        <h1 class="registrate">Regístrate</h1>
+        <h5 class="registrate">o <a href="iniciarsesion.php" class="texto-inicia">inicia sesión en tu cuenta</a></h5>
+
+        <form action="php/Registrarse.php" method="post">
+
+            <?php if(isset($_GET['error'])){ ?>
+
+                <h5 class="error">
+                    <?php echo $_GET['error']?>
+                </h5>
+            <?php 
+            }
+            ?>
+            <?php if(isset($_GET['success'])){ ?>
+
+                <h5 class="success">
+                    <?php echo $_GET['success']?>
+                </h5>
+            <?php 
+            }
+            ?>
+            
+            <div class="cuadrostexto"> <!--    Cuadros de texto    -->
+                <input type="text" name="Nombre" placeholder="Nombre" required>
+                <input type="text" name="Apellidos" placeholder="Apellidos" required>
+                <input type="email" name="Correo" placeholder="Correo electrónico" required>
+                <input type="password" name="Contraseña" placeholder="Contraseña" required>
+            </div>
+
+            <label class="custom-checkbox">Recuérdame
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <input type="submit" value="Registrarse" class="botonregistro"></input> <!-- Botón de Registrarse   -->
+        </form>
+    </div>
+    <!--    FIN MITAD DERECHA   -->
+</body>
+
+</html>
