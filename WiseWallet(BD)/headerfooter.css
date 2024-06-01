@@ -41,6 +41,12 @@ body {
     /* puedes agregar más estilos de la fuente aquí, como font-weight y font-style */
 }
 
+@font-face {
+    font-family: 'Fuente4';
+    src: url('VintageGlamour-Regular.ttf') format('opentype');
+    /* puedes agregar más estilos de la fuente aquí, como font-weight y font-style */
+}
+
 /*--------------------------------------------------------------------------------*/
 
 /*  CABECERA    */
@@ -169,7 +175,7 @@ a.logo {
 .sidenav {
     z-index: 99;
     height: 100%;
-    max-height: 82.5vh;
+    max-height: 84vh;
     width: 0;
     position: fixed;
     top: 0;
@@ -251,7 +257,13 @@ a.logo {
     left: 0;
     right: 0;
     background-color: #000000;
-    /* De momento transparente */
-    padding: 90px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer a{
+    color: white;
+    margin: 0 20px;
 }
 /*  FIN PIE DE PAGINA   */

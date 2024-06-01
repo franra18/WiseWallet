@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiseWallet</title>
     <link rel="icon" type="image/png" href="logo.png">
-    <link rel="stylesheet" href="iniciarsesion2.css">
+    <link rel="stylesheet" href="iniciarsesion.css">
     <link rel="stylesheet" href="headerfooter.css">
 </head>
 
@@ -15,7 +15,7 @@
     <!--    CABECERA    -->
     <div class="login">
         <div class="header">
-            <a href="index.html" class="logo_iniciar">WiseWallet</a>
+            <a href="registrarse.php" class="logo_iniciar">WiseWallet</a>
             <div class="header-right">
                 <!-- A la pagina que esté activa le añado class = "active" -->
                 <a href="sobrenosotros.html">Sobre nosotros</a>

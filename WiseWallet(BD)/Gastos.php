@@ -5,7 +5,39 @@ include('php/conexion.php');
 
 $id_usuario = $_SESSION['ID'];
 
-$consulta = "SELECT * FROM gastos WHERE id_usuario = $id_usuario ORDER BY Fecha DESC";
+$filtro = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $categoria = isset($_POST['filtro_categoria']) ? $_POST['filtro_categoria'] : '';
+    $fecha_desde = isset($_POST['fechadesde']) ? $_POST['fechadesde'] : '';
+    $fecha_hasta = isset($_POST['fechahasta']) ? $_POST['fechahasta'] : '';
+
+    if ($fecha_desde !== '') {
+        $fecha_desde = date('Y-m-d', strtotime($fecha_desde));
+    }
+    if ($fecha_hasta !== '') {
+        $fecha_hasta = date('Y-m-d', strtotime($fecha_hasta));
+    }
+
+    if ($categoria !== '') {
+        $filtro .= "AND categorias.Nombre_Categoria = '$categoria' ";
+    }
+
+    if ($fecha_desde !== '' && $fecha_hasta === '') {
+        $filtro .= "AND gastos.Fecha >= '$fecha_desde' ";
+    } elseif ($fecha_desde === '' && $fecha_hasta !== '') {
+        $filtro .= "AND gastos.Fecha <= '$fecha_hasta' ";
+    } elseif ($fecha_desde !== '' && $fecha_hasta !== '') {
+        $filtro .= "AND gastos.Fecha BETWEEN '$fecha_desde' AND '$fecha_hasta' ";
+    }
+}
+
+$consulta = "SELECT gastos.*, categorias.Nombre_Categoria 
+             FROM gastos 
+             JOIN categorias ON gastos.Categoría = categorias.ID 
+             WHERE gastos.id_usuario = $id_usuario $filtro 
+             ORDER BY gastos.Fecha DESC";
+
 $resultado = $conexion->query($consulta);
 $Gastos = $resultado->fetch_all(MYSQLI_ASSOC);
 
@@ -22,28 +54,39 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
     <title>WiseWallet</title>
     <link rel="icon" type="image/png" href="logo.png"> <!--    Icono de la pestaña     -->
     <link rel="stylesheet" href="headerfooter.css"> <!--   Enlace con el archivo css     -->
-    <link rel="stylesheet" href="Gastos2.css">
+    <link rel="stylesheet" href="gastos.css">
     <!-- Icono de la flecha hacia abajo e icono usuario -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Flatpickr Theme CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
 </head>
-
-<!--    Codigo Alpha Vantage: RKKRW3RKQQR6UBVE  -->
 
 <body>
     <!--Asi se comenta en el html-->
     <!--        Menu        -->
     <div id="mysidenav" class="sidenav">
+    <a href="index.html">Inicio</a>
         <!--    Dropdown    -->
         <button class="dropdown-btn">Mi cuenta
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="Gastos.html">Subir</a>
-            <a href="#">Buscar</a>
-            <a href="#">Filtrar</a>
-            <a href="#">Visualizar</a>
+            <a href="Perfil.php">Perfil</a>
+            <a href="#">Cuentas y </br> tarjetas</a>
+            <a href="suscripciones.html">Suscripciones</a>
+        </div>
+        <!--    Dropdown    -->
+        <button class="dropdown-btn">Gastos
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="Gastos.php">Mis Gastos</a>
             <a href="#">Grupales</a>
-            <a href="#">Historial</a>
             <a href="#">Exportar</a>
         </div>
         <!--    Enlaces     -->
@@ -62,7 +105,7 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
     <!--    Fin menu    -->
 
     <!--    CABECERA    -->
-    <a href="iniciarsesion.php" class="logo">WiseWallet</a>
+    <a href="index.html" class="logo">WiseWallet</a>
     <div class="header">
 
         <div class="iconomenu" onclick="myFunction(this), toggleNav()">
@@ -99,30 +142,56 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
             ?>
 
             <div class="cuadrostexto">
-                <input type="text" name="Descripcion" placeholder="Descripcion" required>
-                <input type="" name="Categoria" placeholder="Categoria">
+                <input type="text" name="Descripcion" autocomplete="off" placeholder="Descripcion" required>
 
-                <div id="formularioCategoria" style="display:none;">
-                    <?php
-                        foreach($Categorias as $categoria) {
-                        ?>
+                <select name="Categoria" required>
+                    <option value="" disabled selected>Selecciona una categoría</option>
+                    <?php foreach($Categorias as $categoria) { ?>
 
-                            <input type="radio" name="categoria" value="<?php $categoria['Nombre_Categoria'] ?>"> <?php $categoria['Nombre_Categoria'] ?> <br>
-                        <?php
-                        }
-                    ?>
-                    <button id="btnSeleccionarCategoria">Seleccionar</button>
-                </div>
+                        <option value="<?php echo $categoria['Nombre_Categoria'] ?>"><?php echo $categoria['Nombre_Categoria'] ?></option>
+                    <?php } ?>
+                </select>
 
-                <input type="date" name="Fecha" placeholder="Fecha" required>
+                <input type="text" name="Fecha" id="FechaInputGasto" placeholder="Fecha" class="flatpickr-input" required>
+
                 <input type="number" name="Cantidad" placeholder="Cantidad" required>
             </div>
     
             <button type="submit" class="BotonGasto2">Enviar</button>
         </form>
 
-        <?php
+        <form method="POST" action="Gastos.php">
+            <div class="Filtro">
 
+                Filtros
+                <div class="filtro_categoria">
+                
+                    Categoria
+                    <select name="filtro_categoria">
+
+                        <option value="" disabled selected>Selecciona una categoría</option>
+                            <?php foreach($Categorias as $categoria) { ?>
+
+                                <option value="<?php echo $categoria['Nombre_Categoria'] ?>"><?php echo $categoria['Nombre_Categoria'] ?></option>
+                            <?php } ?>
+                    </select>
+                </div>
+                <div class="filtro_fecha1">
+                
+                    Fecha desde:
+                    <input type="text" name="fechadesde" id="FechaInputDesde" placeholder="Seleccionar fecha" class="flatpickr-input">
+                </div>
+                <div class="filtro_fecha2">
+                
+                    Fecha hasta:
+                    <input type="text" name="fechahasta" id="FechaInputHasta" placeholder="Seleccionar fecha" class="flatpickr-input">
+                </div>
+
+                <input type="submit" value="Aplicar" class="BotonFiltrar">
+            </div>
+        </form>
+
+        <?php
             $fecha_anterior = null;
     
             foreach($Gastos as $gasto) {
@@ -136,7 +205,7 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
             
             <div class="Gasto">
                 <h1 class="Nombre_Gasto"> <?php echo $gasto['Descripcion']?> </h1>
-                <h5 class="Categoria_Gasto"> <?php echo $gasto['Categoría']?> </h5>
+                <h5 class="Categoria_Gasto"> <?php echo $gasto['Nombre_Categoria']?> </h5>
                 <h5 class="Cantidad_Gasto"> <?php echo $gasto['Cantidad']?> € </h5> 
             </div>
         <?php
@@ -145,11 +214,17 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
         }
     ?>
     </div>
-
     <!--    FIN CONTENIDO PRINCIPAL     -->
 
     <!--    PIE DE PAGINA    -->
-    
+    <div class="footer">
+        <div class="centrarenlaces">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Aviso legal</a>
+            <a href="#">Cookies</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
     <!--    FIN PIE DE PAGINA    -->
 
     <!--    SCRIPTS     -->
@@ -158,26 +233,13 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
             x.classList.toggle("change");
         }
 
-        function toggleNav() {  // Hace que el icono del menu pueda abrir y cerrar el sidenav
+        function toggleNav() {  // Hace que el icono del menu pueda abrir y el sidenav
             const sidenav = document.getElementById("mysidenav");
             const container = document.querySelector(".iconomenu");
-            const submenu1 = document.querySelector(".sidenav .dropdown-container:nth-of-type(1)");
-            const submenu2 = document.querySelector(".sidenav .dropdown-container:nth-of-type(2)");
-            const opcionactiva1 = document.querySelector(".sidenav .opcionactiva:nth-of-type(1)");
-            const opcionactiva2 = document.querySelector(".sidenav .opcionactiva:nth-of-type(2)");
 
             if (sidenav.style.width === "200px") {
                 sidenav.style.width = "0";
                 container.classList.remove("change");
-
-                //Ocultar submenus
-                submenu1.style.display = "none";
-                submenu2.style.display = "none";
-
-                //Eliminar clase "opcionactiva"
-                opcionactiva1.classList.toggle("opcionactiva");
-                opcionactiva2.classList.toggle("opcionactiva");
-
             } else {
                 sidenav.style.width = "200px";
                 container.classList.add("change");
@@ -201,7 +263,6 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
         }
 
         document.getElementById("MostrarIntroducirGasto").addEventListener("click", function() {
-
             var formulario = document.getElementById("formulario");
             if (formulario.style.display === "block") {
                 formulario.style.display = "none";
@@ -210,20 +271,32 @@ $Categorias = $resultado2->fetch_all(MYSQLI_ASSOC);
             }
         });
 
-        var formularioCategoria = document.getElementById("formularioCategoria");
-        var btnSeleccionarCategoria = document.getElementById("btnSeleccionarCategoria");
-        var inputCategoria = document.getElementsByName("Categoria")[0];
-
-        // Mostrar el formulario de categoría al hacer clic en el campo de categoría
-        inputCategoria.addEventListener("click", function() {
-            formularioCategoria.style.display = "block";
+        const fpGasto = flatpickr("#FechaInputGasto", {
+            dateFormat: "d-m-Y",
+            altInput: true,
+            altFormat: "F j, Y",
+            locale: "es",
+            allowInput: true,
         });
 
-        // Manejar la selección de categoría y ocultar el formulario de categoría
-        btnSeleccionarCategoria.addEventListener("click", function() {
-            var categoriaSeleccionada = document.querySelector('input[name="categoria"]:checked').value;
-            inputCategoria.value = categoriaSeleccionada;
-            formularioCategoria.style.display = "none";
+        const fpDesde = flatpickr("#FechaInputDesde", {
+            dateFormat: "d-m-Y",
+            altInput: true,
+            altFormat: "F j, Y",
+            locale: "es",
+        });
+
+        const fpHasta = flatpickr("#FechaInputHasta", {
+            dateFormat: "d-m-Y",
+            altInput: true,
+            altFormat: "F j, Y",
+            locale: "es",
+        });
+
+        window.addEventListener('scroll', () => {
+            if (fpGasto.isOpen) fpGasto.close();
+            if (fpDesde.isOpen) fpDesde.close();
+            if (fpHasta.isOpen) fpHasta.close();
         });
     </script>
     <!--    FIN SCRIPTS     -->

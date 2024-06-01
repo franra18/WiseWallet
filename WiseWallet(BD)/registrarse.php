@@ -6,14 +6,14 @@
     <title>WiseWallet</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="headerfooter.css">
-    <link rel="stylesheet" href="registrarse2.css">
+    <link rel="stylesheet" href="registrarse.css">
 </head>
 
 <body>
 
     <!--    CABECERA    -->
     <div class="header-register">
-        <a href="index.html" class="logo">WiseWallet</a>
+        <a href="registrarse.php" class="logo">WiseWallet</a>
         <div class="header-right">
             <a href="sobrenosotros.html">Sobre nosotros</a>
             <a href="iniciarsesion.php">Iniciar Sesión</a>            

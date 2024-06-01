@@ -24,7 +24,7 @@ if ($_SESSION['FechaNac'] !== NULL) {
     <title>WiseWallet</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="headerfooter.css">
-    <link rel="stylesheet" href="Perfil.css">
+    <link rel="stylesheet" href="perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -32,42 +32,43 @@ if ($_SESSION['FechaNac'] !== NULL) {
 
     <!--        Menu        -->
     <div id="mysidenav" class="sidenav">
+    <a href="index.html">Inicio</a>
         <!--    Dropdown    -->
         <button class="dropdown-btn">Mi cuenta
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
+            <a href="Perfil.php">Perfil</a>
             <a href="#">Cuentas y </br> tarjetas</a>
-            <a href="#">Foto</a>
-            <a href="#">Fecha</a>
-            <a href="#">Suscripciones</a>
-            <a href="#">Otros datos</a>
+            <a href="suscripciones.html">Suscripciones</a>
         </div>
         <!--    Dropdown    -->
         <button class="dropdown-btn">Gastos
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="Gastos.php">Subir</a>
-            <a href="#">Buscar</a>
-            <a href="#">Filtrar</a>
-            <a href="#">Visualizar</a>
+            <a href="Gastos.php">Mis Gastos</a>
             <a href="#">Grupales</a>
-            <a href="#">Historial</a>
             <a href="#">Exportar</a>
         </div>
         <!--    Enlaces     -->
         <a href="#">Objetivos</a>
         <a href="#">Progreso</a>
         <a href="#">Multimedia</a>
-        <a href="#">Mercado de </br> valores</a>
-        <a href="#">Noticias</a>
+        <!--    Dropdown    -->
+        <button class="dropdown-btn">Actualidad
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Noticias</a>
+            <a href="#">Mercado de <br> valores</a>
+        </div>
 
     </div>
     <!--    Fin menu    -->
 
     <!--    CABECERA    -->
-    <a href="iniciarsesion.php" class="logo">WiseWallet</a>
+    <a href="index.html" class="logo">WiseWallet</a>
     <div class="header">
 
         <div class="iconomenu" onclick="myFunction(this), toggleNav()">
@@ -132,6 +133,15 @@ if ($_SESSION['FechaNac'] !== NULL) {
 
     </div>
 
+    <div class="footer">
+        <div class="centrarenlaces">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Aviso legal</a>
+            <a href="#">Cookies</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+    
     <script>
         
         function myFunction(x) {  // Animación del icono del menu

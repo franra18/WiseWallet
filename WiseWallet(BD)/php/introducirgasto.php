@@ -18,9 +18,14 @@ if(isset($_POST['Descripcion']) && isset($_POST['Cantidad']) && isset($_POST['Fe
     $Descripcion = validar($_POST['Descripcion']);
     $Categoria = validar($_POST['Categoria']);
     $Cantidad = validar($_POST['Cantidad']);
-    $Fecha = validar($_POST['Fecha']);
+    $Fecha = date('Y-m-d', strtotime(validar($_POST['Fecha'])));
 
-    $sql = "INSERT INTO gastos(Descripcion, Categoria, Cantidad, Fecha, id_usuario) VALUES('$Descripcion', '$Categoria', '$Cantidad', '$Fecha', '{$_SESSION['ID']}')";
+    $Categoria_sql = "SELECT ID FROM categorias WHERE '$Categoria' = Nombre_Categoria";
+    $categoria_result = $conexion->query($Categoria_sql);
+    $categoria_row = $categoria_result->fetch_assoc();
+    $Categoria_ID = $categoria_row['ID'];
+
+    $sql = "INSERT INTO gastos(Descripcion, Categoría, Cantidad, Fecha, id_usuario) VALUES('$Descripcion', '$Categoria_ID', '$Cantidad', '$Fecha', '{$_SESSION['ID']}')";
     $query = $conexion->query($sql); 
 
     if($query){

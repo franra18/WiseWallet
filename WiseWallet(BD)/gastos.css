@@ -1,0 +1,234 @@
+/*    FONDO Y COLORES     */
+body{
+    background-image: url('Fondo3.jpg');
+    background-size: cover;
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+
+.header, .Filtro, .BotonGasto, .BotonGasto2, .sidenav, .footer {
+    background-color: #DE5B8B; /*  #6E1133 #DA497E #DE5B8B #F162AA #DC4A93 #F88262 #CE5908 #F4B1E1*/
+}
+
+.opcionactiva, .BotonGasto2:hover, .BotonGasto:hover, .FormularioIntroducirGasto, .BotonFiltrar {
+    background-color:#f588b0;
+}
+
+.Gasto, .Fecha, .BotonFiltrar {
+    font-family: Fuente4;
+}
+
+/*  Colores letras   */
+.sidenav a, .dropdown-btn, .BotonGasto2, .BotonGasto, .Filtro, .filtro_categoria, .filtro_fecha1, .filtro_fecha2,
+.BotonFiltrar, .header a, a.logo, .footer a{
+    color: black;
+}
+
+.bar1, .bar2, .bar3 {
+    background-color: black;
+}
+
+.header a:hover::after {
+    background-color: black;
+    /* Color del borde de los enlaces de la cabecera al hacer hover */
+}
+
+.sidenav a:hover, .dropdown-btn:hover {
+    color: #fdb299;
+}
+
+.dropdown-container a{
+    color: white;
+}
+/*  Fin colores letras  */
+
+.filtro_categoria, .filtro_fecha1, .filtro_fecha2 {
+    font-size: 15px;
+}
+
+.Filtro, .BotonGasto {
+    
+    font-family: Fuente4;
+    font-size: 28px;
+}
+
+.BotonGasto2 {
+    border: solid black 1px;
+    border-radius: 3px;
+}
+
+.Fecha {
+    border-top: solid #810733;
+}
+
+.Gasto {
+    border-bottom: solid #810733;
+}
+/*      FIN FONDO Y COLORES     */
+
+.Contenido{
+
+    padding-top: 130px;
+    margin-left: 12%;
+    margin-right: 12%;
+    min-height: 81.3%;
+}
+
+.misgastos{
+
+    font-family: Fuente4;
+    font-size: 35px;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.BotonGasto{
+
+    margin-bottom:5%;
+    margin-left: 20%;
+    padding:20px;
+    width:60%;
+    border:white;
+}
+
+.BotonGasto, .Filtro, .FormularioIntroducirGasto{
+    border-radius: 8px;
+}
+
+.BotonGasto:hover{
+    cursor:pointer;
+}
+
+.FormularioIntroducirGasto{
+
+    margin-top:-5%;
+    margin-bottom:5%;
+    position:relative;
+    width:53.05%;
+    margin-left:20%;
+    padding:40px;
+    height:50%;
+}
+
+.BotonGasto2{
+    margin-top:4%;
+    margin-left: 20%;
+    padding:20px;
+    width:60%;
+}
+
+.BotonGasto2:hover{
+    cursor:pointer;
+}
+
+.cuadrostexto input, select{
+    margin-left: 15%;
+    width: 70%;
+    height: 45px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius:0;
+}
+
+.Filtro{
+
+    text-align:center;
+    padding:20px;
+    margin-bottom:5%;
+    margin-left:15%;
+    margin-right:15%;
+}
+
+.filtro_categoria{
+
+    margin-top:40px;
+    width:40%;
+    height:10%;
+}
+
+.filtro_categoria select{
+
+    cursor: pointer;
+    margin-left:10px;
+}
+
+.filtro_fecha1{
+
+    margin-top:-11%;
+    margin-left:50%;
+    margin-bottom:5%;
+}
+
+.filtro_fecha2{
+
+    margin-left:50%;
+}
+
+.flatpickr-input {
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+.FormularioIntroducirGasto .cuadrostexto select {
+    cursor: pointer;
+    border: solid 2px black;
+}
+
+.BotonFiltrar{
+    margin-top:4%;
+    padding:10px;
+    width:60%;
+    border:solid black 1px;
+}
+
+.BotonFiltrar:hover{
+    cursor:pointer;
+}
+
+.Fecha{
+
+    font-size: 18px;
+    padding-top: 8px;
+    margin-top:0%;
+    margin-bottom:-2%;
+    border-width:3px;
+    text-align:center;
+}
+
+.Gasto{
+
+    margin-bottom:-3px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding:20px;
+    border-radius:2px;
+    border-width:2px;
+}
+
+.Nombre_Gasto{
+
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+.Categoria_Gasto{
+
+    margin-bottom:0px;
+    margin-left:20px;
+    font-size:20px;
+}
+
+.Cantidad_Gasto{
+
+    text-align:right;
+    margin-top:-60px;
+    font-size:25px;
+}
+
+.error {
+    color:red;
+    padding-top:10px;
+}
