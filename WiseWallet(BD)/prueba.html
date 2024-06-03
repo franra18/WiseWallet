@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Flatpickr con Scroll</title>
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Estilos personalizados -->
+    <style>
+        /* Cabecera */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000; /* Asegura que la cabecera esté encima del resto */
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin-top: 50px; /* Margen para evitar que el contenido se solape con la cabecera */
+            padding: 20px;
+        }
+
+        /* Contenido de muestra */
+        .content {
+            height: 2000px; /* Altura suficiente para permitir el scroll */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Estilos para el input de Flatpickr */
+        .flatpickr-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera -->
+    <div class="header">
+        <h1>Cabecera</h1>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h2>Contenido de prueba</h2>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod lectus nec metus convallis, eget dapibus libero tristique. Sed gravida lacinia tellus, vel accumsan nunc tincidunt at. Nulla a elit mi. Morbi nec nunc id leo sodales tempor. Suspendisse potenti. Vivamus eleifend tempor sem, sed placerat dui rhoncus ac. Duis nec sapien ut leo tristique tincidunt. Phasellus id lectus sed justo convallis tempus.</p>
+            <!-- Input para Flatpickr -->
+            <input type="text" id="datepicker" placeholder="Selecciona una fecha" class="flatpickr-input">
+            <p>Donec a nisi felis. Vivamus in massa quis justo fringilla pretium. Ut et odio ligula. Sed maximus suscipit efficitur. Aliquam erat volutpat. In interdum bibendum massa, ut venenatis urna auctor vel. Duis eget tempor ex, vitae gravida orci. Suspendisse fermentum libero ut arcu mattis, nec consectetur purus consequat. Suspendisse potenti. Sed accumsan neque nec nisi facilisis euismod.</p>
+            <p>Mauris scelerisque odio eget nulla sollicitudin, at feugiat felis convallis. Aenean condimentum lobortis orci. Suspendisse potenti. Integer et pulvinar nisi. Aliquam erat volutpat. Nam porttitor pharetra purus, nec mattis tortor congue nec. Proin volutpat nisl ac semper sodales. Mauris et tortor eget nisi vehicula feugiat at id nisi. Proin sed viverra felis, nec rutrum orci. Maecenas vestibulum eros eros, ut consectetur risus malesuada ac. In euismod justo at lacus tincidunt, a suscipit tortor interdum. Proin sed sapien a eros viverra feugiat nec in metus.</p>
+        </div>
+    </div>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+    <script>
+        // Inicialización de Flatpickr en español
+        const fp = flatpickr("#datepicker", {
+            dateFormat: "d-m-Y",
+            altInput: true,
+            altFormat: "F j, Y",
+            locale: "es", // Configura Flatpickr en español
+        });
+
+        // Detectar el desplazamiento de la página y cerrar el calendario si está abierto
+        window.addEventListener('scroll', () => {
+            if (fp.isOpen) {
+                fp.close();
+            }
+        });
+    </script>
+</body>
+</html>

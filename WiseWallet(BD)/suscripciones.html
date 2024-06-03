@@ -1,0 +1,162 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseWallet</title>
+    <link rel="icon" type="image/png" href="logo.png"> <!--    Icono de la pestaña     -->
+    <link rel="stylesheet" href="headerfooter.css"> <!--   Enlace con el archivo css     -->
+    <link rel="stylesheet" href="suscripciones.css">
+    <!-- Icono de la flecha hacia abajo e icono usuario -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!--Asi se comenta en el html-->
+    <!--        MENU        -->
+    <div id="mysidenav" class="sidenav">
+        <a href="index.html">Inicio</a>
+        <!--    Dropdown    -->
+        <button class="dropdown-btn">Mi cuenta
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="Perfil.php">Perfil</a>
+            <a href="#">Cuentas y </br> tarjetas</a>
+            <a href="suscripciones.html">Suscripciones</a>
+        </div>
+        <!--    Dropdown    -->
+        <button class="dropdown-btn">Gastos
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="Gastos.php">Mis Gastos</a>
+            <a href="#">Grupales</a>
+            <a href="#">Exportar</a>
+        </div>
+        <!--    Enlaces     -->
+        <a href="#">Objetivos</a>
+        <a href="#">Progreso</a>
+        <a href="#">Multimedia</a>
+        <!--    Dropdown    -->
+        <button class="dropdown-btn">Actualidad
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Noticias</a>
+            <a href="#">Mercado de <br> valores</a>
+        </div>
+
+    </div>
+    <!--    FIN MENU    -->
+
+    <!--    CABECERA    -->
+    <a href="index.html" class="logo">WiseWallet</a>
+    <div class="header">
+
+        <div class="iconomenu" onclick="myFunction(this), toggleNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="header-right">
+            <a href="sobrenosotros.html">Sobre nosotros</a>
+            <!-- A la pagina que esté activa le añado class = "active" -->
+            <a href="Perfil.php"><i class="fa fa-fw fa-user"></i> Perfil</a>
+        </div>
+    </div>
+    <!--    FIN CABECERA    -->
+
+    <!--    CONTENIDO PRINCIPAL   -->
+    <h1>SUSCRIPCIONES</h1>
+    <div class="parrafo">
+        <p>¡Elige la suscripción que mejor se adapte a tus necesidades financieras! Con nuestra plataforma de
+            seguimiento de gastos, podrás mantener un control efectivo de tus egresos. Con ambas de nuestras
+            opciones ofrecemos una variedad de características diseñadas para ayudarte a administrar tu dinero de manera
+            inteligente y eficiente. Explora nuestras opciones de suscripción a continuación y comienza a tomar el
+            control de tus finanzas hoy mismo.
+        </p>
+    </div>
+    <div class="suscripciones">
+        <div class="suscripcion">
+            <h2>Básica (2.99€/mes)</h2>
+            <p>Acceso básico a la plataforma.</p>
+            <p>Control de gastos.</p>
+            <p>Informe mensual por correo electrónico.</p>
+            <button>Suscribirse</button>
+        </div>
+        <div class="suscripcion">
+            <h2>Premium (9.99€/mes)</h2>
+            <p>Acceso completo a la plataforma.</p>
+            <p>Control avanzado de gastos.</p>
+            <p>Informe semanal por correo electrónico.</p>
+            <p>Asistencia prioritaria al cliente.</p>
+            <button>Suscribirse</button>
+        </div>
+    </div>
+    <!--    FIN CONTENIDO PRINCIPAL     -->
+
+    <!--    PIE DE PAGINA    -->
+    <div class="footer">
+        <div class="centrarenlaces">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Aviso legal</a>
+            <a href="">Cookies</a>
+            <a href="#">Contacto</a>
+        </div>
+    </div>
+    <!--    FIN PIE DE PAGINA    -->
+
+    <!--    SCRIPTS     -->
+    <script>
+        function myFunction(x) {  // Animación del icono del menu
+            x.classList.toggle("change");
+        }
+
+        function toggleNav() {  // Hace que el icono del menu pueda abrir y cerrar el sidenav
+            const sidenav = document.getElementById("mysidenav");
+            const container = document.querySelector(".iconomenu");
+            const submenu1 = document.querySelector(".sidenav .dropdown-container:nth-of-type(1)");
+            const submenu2 = document.querySelector(".sidenav .dropdown-container:nth-of-type(2)");
+            const opcionactiva1 = document.querySelector(".sidenav .opcionactiva:nth-of-type(1)");
+            const opcionactiva2 = document.querySelector(".sidenav .opcionactiva:nth-of-type(2)");
+
+            if (sidenav.style.width === "200px") {
+                sidenav.style.width = "0";
+                container.classList.remove("change");
+
+                //Ocultar submenus
+                submenu1.style.display = "none";
+                submenu2.style.display = "none";
+
+                //Eliminar clase "opcionactiva"
+                opcionactiva1.classList.toggle("opcionactiva");
+                opcionactiva2.classList.toggle("opcionactiva");
+
+            } else {
+                sidenav.style.width = "200px";
+                container.classList.add("change");
+            }
+        }
+
+        //DROPDOWN
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("opcionactiva");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+    <!--    FIN SCRIPTS     -->
+</body>
+
+</html>

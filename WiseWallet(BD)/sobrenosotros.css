@@ -1,0 +1,72 @@
+/*      Colores y fondo      */
+
+body{
+    background-image: url('FondoInicio.jpg');
+    background-size: cover;
+}
+
+.header, .footer {
+    background-color: black;
+}
+
+.header a, a.logo, .footer a{
+    color: white;
+}
+
+.header a:hover::after {
+    background-color: white;
+    /* Color del borde de los enlaces de la cabecera al hacer hover */
+}
+/*      Fin colores y fondo      */
+
+
+.content h1 {
+    margin-top: 10%;
+    font-size: 70px;
+    font-weight: 150;
+    font-family: Fuente4;
+    text-align: center;
+}
+
+h2, p {
+    /*  Separaciones laterales parrafos */
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+    font-family: Fuente3;
+    text-align: justify;
+}
+
+/*  Imagenes alineadas con el texto  */
+.container {
+    clear: both;
+    /* Asegura que no haya elementos flotantes alrededor */
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 6%;
+}
+
+.container h2, .container p {
+    margin: 0;
+}
+
+.imagen-izquierda {
+    float: left;
+    /* Hace que la imagen flote a la izquierda */
+    margin-right: 50px;
+    /* Espacio entre la imagen y el texto */
+    height: 250px;
+}
+
+.imagen-derecha {
+    float: right;
+    margin-left: 50px;
+    height: 250px;
+}
