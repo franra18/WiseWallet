@@ -15,7 +15,9 @@ Frontend:
   - HTML5
   - CSS3
   - JavaScript
+
 Backend:
   - PHP
+
 Base de datos:
   - MySQL (servidor administrado con Apache)
